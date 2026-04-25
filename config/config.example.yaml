@@ -1,0 +1,38 @@
+# Arabia DNS Checker Configuration
+
+server:
+  port: 8080
+  database_url: "postgresql://user:pass@localhost/arabia_dns"
+  redis_url: "redis://localhost:6379"
+
+monitoring:
+  check_interval: 30s
+  timeout: 10s
+  retry_count: 3
+
+nodes:
+  jeddah:
+    host: "jeddah.arabia-dns-checker.com"
+    port: 9001
+    location: "Jeddah, Saudi Arabia"
+    isp: "STC"
+    
+  amman:
+    host: "amman.arabia-dns-checker.com"
+    port: 9001
+    location: "Amman, Jordan"
+    isp: "Zain Jordan"
+    
+  manama:
+    host: "manama.arabia-dns-checker.com"
+    port: 9001
+    location: "Manama, Bahrain"
+    isp: "Batelco"
+
+alerts:
+  email_enabled: true
+  sms_enabled: true
+  webhook_url: "https://hooks.slack.com/..."
+  thresholds:
+    response_time: 1000  # ms
+    packet_loss: 10      # percent

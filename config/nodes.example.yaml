@@ -1,0 +1,22 @@
+# Node Configuration for Monitoring Targets
+
+targets:
+  - domain: "google.com"
+    checks: ["ping", "dns", "http"]
+    interval: 30s
+    
+  - domain: "local-website.sa"
+    checks: ["ping", "dns", "http", "ssl"]
+    interval: 60s
+    
+  - domain: "government-portal.jo"
+    checks: ["ping", "dns", "http"]
+    interval: 120s
+    
+  - domain: "bank-qa.com"
+    checks: ["ping", "dns", "http", "ssl"]
+    interval: 60s
+    
+  - domain: "telecom-ae.net"
+    checks: ["ping", "dns", "http"]
+    interval: 30s
